@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import PropTypes from 'prop-types';
-class FeedbackOptions extends Component {
-  render() {
-    console.log(this.props.options)
+const FeedbackOptions = ({options, onLeaveFeedback }) =>  {
     return (
      <div>
-        {(this.props.options).map(reaction => {
+        {(options).map(reaction => {
           return (
             <button
               type="button"
               key={reaction}
-              onClick={this.props.onLeaveFeedback(reaction)}
+              onClick={() =>(onLeaveFeedback(reaction))}
             >{reaction}</button>
           );
         })}
       </div>
     );
   }
-}
+
 
 export default FeedbackOptions;
 
